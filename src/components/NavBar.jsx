@@ -42,7 +42,7 @@ function NavBar() {
           {isMobileMenuOpen ? <FaTimes/> : <FaBars />}
         </button>
         {isMobileMenuOpen && (
-          <div className='absolute top-16 left-0 w-full bg-white shadow-lg p-4 z-50'>
+          <div className='absolute top-10 left-0 w-full bg-white shadow-lg p-4 z-50'>
             <Link to="/" className='block py-2' onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
             <Link to="/" className='block py-2' onClick={() => setIsMobileMenuOpen(false)}>Teams</Link>
             <Link to="/" className='block py-2' onClick={() => setIsMobileMenuOpen(false)}>Events</Link>

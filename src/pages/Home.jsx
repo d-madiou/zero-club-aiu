@@ -1,3 +1,5 @@
+import About from "../components/About"
+import Banner from "../components/Banner"
 
 
 function Home() {
@@ -42,6 +44,10 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* About Section */}
+      <About />
+      {/*Banner section */}
+      <Banner />
 
     </div>
   )
