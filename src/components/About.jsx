@@ -27,7 +27,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* this is the card clubs */}
             {clubs.map((club) => (
-              <div key={club.id} className="border w-[390px] h-[292px] border-black rounded-[20px] p-6">
+              <div key={club.id} className="border w-[360px] h-[272px] md:w-[390px] md:h-[292px] border-black rounded-[20px] p-6">
                 <div className="flex justify-between mb-2">
                   <span className="font-bold">{club.id}</span>
                   <span className="text-black border-b-5 border-[#E4A251] font-medium">{club.category}</span>

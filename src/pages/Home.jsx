@@ -1,5 +1,8 @@
 import About from "../components/About"
 import Banner from "../components/Banner"
+import Blog from "../components/Blog"
+import EventInfo from "../components/EventInfo"
+import EventType from "../components/EventType"
 
 
 function Home() {
@@ -44,12 +47,38 @@ function Home() {
           </div>
         </div>
       </div>
-      {/* About Section */}
+      
       <About />
-      {/*Banner section */}
+      
       <Banner />
-
-    </div>
+      
+      <EventInfo /> 
+     
+       <EventType />
+      
+      <Blog />
+      
+      <div className="bg-[#46A4A3] font-[Roboto] mt-16 pt-6 pb-6">
+        <div className="container mx-auto px-4 py-10 max-w-7xl">
+          <div className=" text-center flex items-center flex-col">
+            <h2 className="text-[48px] font-bold text-white mb-4">
+               Join the Excitement Today!
+            </h2>
+            <p className="text-white text-[18px] mb-6">
+              Create or join a team and dive into the thrilling world of tech competitions.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <button className="px-6 py-2 bg-white text-[#46A4A3] rounded-[4px] font-medium hover:bg-opacity-90 transition-all">
+                Get Started
+              </button>
+              <button className="px-8 py-2 border border-white text-white rounded-[4px] font-medium hover:bg-gray-50 transition-all">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
   )
 }
 
