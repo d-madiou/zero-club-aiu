@@ -44,12 +44,12 @@ function NavBar() {
         {isMobileMenuOpen && (
           <div className='absolute top-10 left-0 w-full bg-white shadow-lg p-4 z-50'>
             <Link to="/" className='block py-2' onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-            <Link to="/" className='block py-2' onClick={() => setIsMobileMenuOpen(false)}>Teams</Link>
-            <Link to="/" className='block py-2' onClick={() => setIsMobileMenuOpen(false)}>Events</Link>
+            <Link to="/team" className='block py-2' onClick={() => setIsMobileMenuOpen(false)}>Teams</Link>
+            <Link to="/events" className='block py-2' onClick={() => setIsMobileMenuOpen(false)}>Events</Link>
 
             <div className='md:hidden flex items-center space-x-4 mt-2'>
-                <button className='px-8 py-2 border border-[#F0AD4E] rounded-md font-medium cursor-pointer'>Login</button>
-                <button className='px-8 py-2 bg-[#4AAEA3] text-white rounded-md font-medium cursor-pointer'>Register</button>
+                <Link to="/login" className='px-8 py-2 border border-[#F0AD4E] rounded-md font-medium cursor-pointer'>Login</Link>
+                <Link to="/register" className='px-8 py-2 bg-[#4AAEA3] text-white rounded-md font-medium cursor-pointer'>Register</Link>
                 <select className='border border-gray-300 rounded-md px-1 py-2'>
                 {languages.map((lang) => (
                     <option key={lang.code} onClick={() => toggleLanguage(lang)}>{lang.name}</option>
@@ -63,12 +63,12 @@ function NavBar() {
         {/* Desktop Menu, where we have large and medium size */}
       <div className='hidden md:flex items-center space-x-10'>
         <Link to="/" className='font-medium text-black hover:text-[#4AAEA3]'>Home</Link>
-        <Link to="/" className='font-medium text-black hover:text-[#4AAEA3]'>Teams</Link>
-        <Link to="/" className='font-medium text-black hover:text-[#4AAEA3]'>Events</Link>
+        <Link to="/team" className='font-medium text-black hover:text-[#4AAEA3]'>Teams</Link>
+        <Link to="/events" className='font-medium text-black hover:text-[#4AAEA3]'>Events</Link>
       </div>
       <div className='hidden md:flex items-center space-x-4'>
-        <button className='px-8 py-2 border border-[#F0AD4E] rounded-md font-medium cursor-pointer'>Login</button>
-        <button className='px-8 py-2 bg-[#4AAEA3] text-white rounded-md font-medium cursor-pointer'>Register</button>
+        <Link to="/login" className='px-8 py-2 border border-[#F0AD4E] rounded-md font-medium cursor-pointer'>Login</Link>
+        <Link to="/register" className='px-8 py-2 bg-[#4AAEA3] text-white rounded-md font-medium cursor-pointer'>Register</Link>
         <div className="relative">
           <div 
             className="flex items-center ml-4 cursor-pointer" 

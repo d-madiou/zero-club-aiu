@@ -7,6 +7,9 @@ import hackers from '../assets/images/hackers.png'
 import techNexus from '../assets/images/nexus.png'
 import pixels from '../assets/images/pixels.png'
 import startup from '../assets/images/startup.png'
+import Gallery1 from '../assets/images/Gallery1.png'
+import Gallery2 from '../assets/images/Gallery2.png'
+import Gallery3 from '../assets/images/Gallery3.png'
 
 export const members = [
     {
@@ -65,5 +68,20 @@ export const clubs =[
         name: 'Pixel Masters',
         category: 'Design',
         logo: pixels
+    }
+]
+
+export const GalleryImage = [
+    {
+        id: 1,
+        gallery: Gallery1
+    },
+    {
+        id: 2,
+        gallery: Gallery2
+    },
+    {
+        id: 3,
+        gallery: Gallery3
     }
 ]
