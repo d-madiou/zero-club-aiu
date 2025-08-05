@@ -5,6 +5,7 @@ import Team from './pages/Team'
 import Events from './pages/Events'
 import Register from './pages/Register'
 import Login from './pages/Login'
+import CreateClub from './pages/CreateClub'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Route path='/register' element={<Register/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/events' element={<Events/>}/>
+      <Route path='/createclub' element={<CreateClub/>}/>
 
     </Routes>
   )
