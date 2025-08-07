@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import About from "../components/About"
 import Banner from "../components/Banner"
 import Blog from "../components/Blog"
@@ -38,12 +39,12 @@ function Home() {
           </p>
 
           <div className="flex space-x-4">
-            <button className="px-7 py-2 bg-[#4A8F8F] text-white rounded-md font-medium hover:bg-opacity-90 transition-all">
+            <Link to='/register' className="px-7 py-2 bg-[#4A8F8F] text-white rounded-md font-medium hover:bg-opacity-90 transition-all">
               Get Started
-            </button>
-            <button className="px-7 py-2 bg-transparent text-white border border-[#E4A251] rounded-md font-medium hover:bg-opacity-30 transition-all">
+            </Link>
+            <Link to='/login' className="px-7 py-2 bg-transparent text-white border border-[#E4A251] rounded-md font-medium hover:bg-opacity-30 transition-all">
               Login
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -68,12 +69,12 @@ function Home() {
               Create or join a team and dive into the thrilling world of tech competitions.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-6 py-2 bg-white text-[#46A4A3] rounded-[4px] font-medium hover:bg-opacity-90 transition-all">
+              <Link to='/register' className="px-6 py-2 bg-white text-[#46A4A3] rounded-[4px] font-medium hover:bg-opacity-90 transition-all">
                 Get Started
-              </button>
-              <button className="px-8 py-2 border border-white text-white rounded-[4px] font-medium hover:bg-gray-50 transition-all">
+                </Link>
+              <Link to='/login' className="px-8 py-2 border border-white text-white rounded-[4px] font-medium hover:bg-gray-50 hover:text-black transition-all">
                 Login
-              </button>
+              </Link>
             </div>
           </div>
         </div>

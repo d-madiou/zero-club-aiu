@@ -13,7 +13,7 @@ function Events() {
         {/* ======= LEFT SIDE - EVENT IMAGE ======= */}
         <div className="flex justify-center lg:justify-start">
           <div
-            className="relative w-full max-w-sm md:max-w-lg lg:max-w-none lg:w-full h-60 md:h-80 lg:h-97 rounded-2xl shadow-lg"
+            className="relative w-full max-w-sm md:max-w-lg lg:max-w-none lg:w-full h-60 md:h-80 lg:h-97 rounded-2xl"
             style={{
               backgroundImage: `url(${EventsImage})`,
               backgroundSize: "cover",

@@ -6,6 +6,7 @@ import Events from './pages/Events'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import CreateClub from './pages/CreateClub'
+import FileUploader from './pages/UploadFile'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path='/events' element={<Events/>}/>
       <Route path='/createclub' element={<CreateClub/>}/>
+      <Route path="/upload/:action" element={<FileUploader />} />
 
     </Routes>
   )

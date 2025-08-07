@@ -1,18 +1,16 @@
 import { useState } from "react"
 import { Eye, EyeOff } from "lucide-react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
+import LogoImage from "../assets/images/logo3zero.png"
 
 function Login() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   })
-
   const [showPassword, setShowPassword] = useState(false)
   const [errors, setErrors] = useState({})
   const [loginMessage, setLoginMessage] = useState({ text: "", type: "" })
-
-  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -22,6 +20,7 @@ function Login() {
     }))
   }
 
+  // Basic client-side validation
   const validateForm = () => {
     const newErrors = {}
     if (!formData.email) {
@@ -38,60 +37,70 @@ function Login() {
     return Object.keys(newErrors).length === 0
   }
 
- const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
 
     if (validateForm()) {
       console.log("Login data:", formData)
+      // Simulate a successful login for frontend testing
       setLoginMessage({ text: "Login successful!", type: "success" })
-      // For the backend, you can make the API call here.
+      // In a real app, you would make an API call here.
       // E.g., api.post('/login', formData).then(...)
-      navigate("/")
     } else {
       setLoginMessage({ text: "Please correct the errors in the form.", type: "error" })
     }
   }
+
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 font-[Roboto]">
-      <div className="max-w-md w-full space-y-8">
+      <div className="max-w-md w-full p-8 space-y-8 bg-white rounded-xl shadow-lg">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">
-            Log In
-            <span className="block w-16 h-1 bg-[#F0AD4E] mt-2"></span>
+          <img className="mx-auto h-12 w-auto" src={LogoImage} alt="Club Hub Logo" />
+          <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
+            Log In to Your Account
+            <span className="block w-16 h-1 bg-[#F0AD4E] mt-2 mx-auto"></span>
           </h2>
         </div>
 
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          {loginMessage.text && (
+            <div
+              className={`p-4 rounded-md text-sm ${
+                loginMessage.type === "success" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"
+              }`}
+            >
+              {loginMessage.text}
+            </div>
+          )}
           <div className="space-y-6">
             {/* Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                Email <span className="text-[#EF4444]">*</span>
+                Email
               </label>
               <input
                 id="email"
                 name="email"
                 type="email"
-                required
-                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-[#4AAEA3] focus:border-[#4AAEA3] focus:z-10 sm:text-sm"
+                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-[#4AAEA3] focus:border-[#4AAEA3] sm:text-sm"
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleInputChange}
               />
+              {errors.email && <p className="mt-2 text-sm text-red-600">{errors.email}</p>}
             </div>
 
             {/* Password */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                Password <span className="text-[#EF4444]">*</span>
+                Password
               </label>
               <div className="relative">
                 <input
                   id="password"
                   name="password"
                   type={showPassword ? "text" : "password"}
-                  required
-                  className="appearance-none relative block w-full px-3 py-2 pr-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-[#4AAEA3] focus:border-[#4AAEA3] focus:z-10 sm:text-sm"
+                  className="appearance-none relative block w-full px-3 py-2 pr-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-[#4AAEA3] focus:border-[#4AAEA3] sm:text-sm"
                   placeholder="Enter your password"
                   value={formData.password}
                   onChange={handleInputChange}
@@ -100,6 +109,7 @@ function Login() {
                   type="button"
                   className="absolute inset-y-0 right-0 pr-3 flex items-center"
                   onClick={() => setShowPassword(!showPassword)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? (
                     <EyeOff className="h-4 w-4 text-gray-400" />
@@ -108,11 +118,12 @@ function Login() {
                   )}
                 </button>
               </div>
+              {errors.password && <p className="mt-2 text-sm text-red-600">{errors.password}</p>}
 
               {/* Forgot Password Link */}
-              <div className="mt-2">
+              <div className="mt-2 text-right">
                 <a href="#" className="text-sm text-[#F0AD4E] hover:text-[#e09c3a] font-medium">
-                  Forgot Password
+                  Forgot Password?
                 </a>
               </div>
             </div>

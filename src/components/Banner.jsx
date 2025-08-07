@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function Banner() {
     return (
       <div className="bg-white font-[Roboto] mt-16">
@@ -10,12 +12,12 @@ function Banner() {
               Unlock exclusive access to competitions, networking, and resources that elevate your tech experience.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-6 py-2 bg-[#4AAEA3] text-white rounded-[4px] font-medium hover:bg-opacity-90 transition-all">
+              <Link to='/register' className="px-6 py-2 bg-[#4AAEA3] text-white rounded-[4px] font-medium hover:bg-opacity-90 transition-all">
                 Get Started
-              </button>
-              <button className="px-6 py-2 border border-[#F0AD4E] text-[#F0AD4E] rounded-[4px] font-medium hover:bg-gray-50 transition-all">
+              </Link>
+              <Link to='/login' className="px-6 py-2 border border-[#F0AD4E] text-[#F0AD4E] rounded-[4px] font-medium hover:bg-gray-50 transition-all">
                 Login
-              </button>
+              </Link>
             </div>
           </div>
         </div>
