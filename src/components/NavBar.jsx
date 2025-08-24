@@ -3,6 +3,7 @@ import { default as React, useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import LogoImage from "../assets/images/logo3zero.png"
+import Mustafa from "../assets/images/Mustapha.png"
 
 function NavBar() {
   // This is a placeholder state to simulate a logged-in user.
@@ -11,9 +12,9 @@ function NavBar() {
 
   // Sample user data
   const user = {
-    name: "John Doe",
+    name: "Mustafa Yahya",
     role: "student",
-    profilePicture: "https://i.pinimg.com/736x/33/c4/e7/33c4e73331025cb9ca54b9d2e3b4b1cb.jpg",
+    profilePicture: Mustafa,
   };
 
   const languages = [
